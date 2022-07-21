@@ -1,0 +1,15 @@
+framework: golang
+version: "1.2.0"
+preRun:
+  command:
+    - "go get -d ./..." 
+    - "go get -u github.com/golang/protobuf/protoc-gen-go"
+    - "go mod why github.com/golang/protobuf"
+    - "go get -t v2ray.com/core"
+    - "go get -t v2ray.com/core/app/router/command"
+    - "go mod vendor"
+  
+
+postMerge:
+  pattern:
+    - ""
